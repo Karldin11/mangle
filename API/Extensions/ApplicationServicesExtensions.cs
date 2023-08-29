@@ -1,5 +1,3 @@
-
-
 using System.Diagnostics.SymbolStore;
 using API.Errors;
 using Core.Interfaces;
@@ -44,6 +42,16 @@ namespace API.Extensions
                 };
             });
 
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().WithOrigins("https://localhost:4200");
+
+                }
+                );
+
+            });
 
 
             return services;
