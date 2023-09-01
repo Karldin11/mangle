@@ -1,7 +1,9 @@
+
 using API.Extensions;
 using API.Middleware;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddApplicationServices(builder.Configuration);
 
+//
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,9 +29,14 @@ app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 
+
+
 app.UseAuthorization();
 
 app.MapControllers();
+
+
+
 
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
