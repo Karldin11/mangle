@@ -3,11 +3,20 @@
 /* Importing Bootstrap SCSS file. */
 @import "./node_modules/bootstrap/scss/bootstrap";
 
+@import "./node_modules/bootswatch/dist/united/bootstrap";
+
 /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
 
 /*Import font-awesome*/
 @import "./node_modules/font-awesome/css/font-awesome";
 
+/*Import spinner*/
+@import "./node_modules/ngx-spinner/animations/timer";
+
 /*Import toastr*/
 @import "./node_modules/ngx-toastr/toastr";
+
+label.xng-breadcrumb-trail {
+  color: orange;
+}
