@@ -6,7 +6,7 @@ namespace Core.Entities.OrderAggregate
             
         }
         public Address(string firstName, string lastName, string street, 
-        string city, string state, string zipCode, string country){
+        string city, string state, string zipCode){
             FirstName=firstName;
             LastName=lastName;
             Street=street;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { User } from '../shared/models/user';
+import { Address, User } from '../shared/models/user';
 import { ReplaySubject, map, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -66,4 +66,14 @@ export class AccountService {
       this.baseUrl + 'account/emailExists?email=' + email
     );
   }
+
+  getUserAddress(){
+    return this.http.get<Address>(this.baseUrl + 'account/address');
+  }
+  
+  updateUserAddress(address: Address){
+    return this.http.put(this.baseUrl+'account/address', address);
+
+  }
+
 }
